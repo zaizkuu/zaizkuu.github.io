@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio CV</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background: linear-gradient(135deg, #0078d7, #00b4d8);
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    nav {
+        background: #222;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    nav a {
+        color: white;
+        padding: 0.8rem 1.2rem;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+    nav a:hover {
+        background: #0078d7;
+    }
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem 1rem;
+        background: white;
+        margin-top: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #0078d7;
+        margin-bottom: 0.5rem;
+    }
+    .skills span {
+        display: inline-block;
+        background: #e0f4ff;
+        color: #0078d7;
+        padding: 0.4rem 0.8rem;
+        margin: 0.3rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+    .project {
+        margin-bottom: 1rem;
+    }
+    .project h3 {
+        margin: 0.3rem 0;
+    }
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background: #222;
+        color: white;
+        margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>John Doe</h1>
+    <p>Full-Stack Developer | Cloud Enthusiast | Problem Solver</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m a passionate developer who loves building impactful software solutions. I specialize in creating efficient, scalable, and user-friendly applications. My goal is to make technology accessible and empowering for everyone.</p>
+</section>
+
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>PHP</span>
+    <span>Laravel</span>
+    <span>Azure</span>
+    <span>Docker</span>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio showcasing my projects and skills.</p>
+    </div>
+    <div class="project">
+        <h3>Cloud-Hosted Minecraft Server</h3>
+        <p>Automated Azure VM setup with Docker and SSH tunneling for multiplayer gaming.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="#" target="_blank">github.com/yourusername</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2025 John Doe. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
