@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jon Jon Albao | Portfolio CV</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
+    <header>
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+        <h1>Jon Jon Albao</h1>
+        <p>Full-Stack Developer | Problem Solver | Tech Innovator</p>
+        <p>Email: <a href="mailto:jonjonalbao66@gmail.com">jonjonalbao66@gmail.com</a> | 
+           GitHub: <a href="https://github.com/zaizkuu" target="_blank">github.com/zaizkuu</a></p>
+        <button id="themeToggle">🌙 Dark Mode</button>
+    </header>
 
-<header>
-    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
-    <h1>Jon Jon Albao</h1>
-    <p>Full-Stack Developer | Problem Solver | Tech Innovator</p>
-    <p>Email: <a href="mailto:jonjonalbao66@gmail.com">jonjonalbao66@gmail.com</a> | 
-       GitHub: <a href="https://github.com/zaizkuu" target="_blank">github.com/zaizkuu</a></p>
-    <button id="themeToggle">🌙 Dark Mode</button>
-</header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I’m Jon Jon Albao, an aspiring software engineer with a passion for building solutions that make life easier and more connected. 
+            Skilled in multiple programming languages and driven by curiosity, I thrive on turning ideas into functional, user-friendly applications. 
+            Whether it’s developing efficient code, automating workflows, or exploring cloud technologies, I’m always eager to learn, adapt, and innovate. 
+            My goal is to contribute to projects that have real-world impact while continuously sharpening my technical expertise.
+        </p>
+    </section>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I’m Jon Jon Albao, an aspiring software engineer with a passion for building solutions that make life easier and more connected. 
-        Skilled in multiple programming languages and driven by curiosity, I thrive on turning ideas into functional, user-friendly applications. 
-        Whether it’s developing efficient code, automating workflows, or exploring cloud technologies, I’m always eager to learn, adapt, and innovate. 
-        My goal is to contribute to projects that have real-world impact while continuously sharpening my technical expertise.
-    </p>
-</section>
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <span>JavaScript</span>
+        <span>C++</span>
+        <span>Java</span>
+        <span>Python</span>
+        <span>C#</span>
+        <span>Visual Basic</span>
+    </section>
 
-<section id="skills" class="skills">
-    <h2>Skills</h2>
-    <span>JavaScript</span>
-    <span>C++</span>
-    <span>Java</span>
-    <span>Python</span>
-    <span>C#</span>
-    <span>Visual Basic</span>
-</section>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <strong>Bachelor of Science in Information Technology</strong><br>
+            Eastern Visayas State University — Graduating 2027
+        </div>
+        <div class="education-item">
+            <strong>Senior High School — Computer System Servicing</strong><br>
+            ACLC Tacloban — Graduated 2023
+        </div>
+        <div class="education-item">
+            <strong>Elementary</strong><br>
+            Tanauan II Central School — Graduated 2017
+        </div>
+    </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <div class="education-item">
-        <strong>Bachelor of Science in Information Technology</strong><br>
-        Eastern Visayas State University — Graduating 2027
-    </div>
-    <div class="education-item">
-        <strong>Senior High School — Computer System Servicing</strong><br>
-        ACLC Tacloban — Graduated 2023
-    </div>
-    <div class="education-item">
-        <strong>Elementary</strong><br>
-        Tanauan II Central School — Graduated 2017
-    </div>
-</section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:jonjonalbao66@gmail.com">jonjonalbao66@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/zaizkuu" target="_blank">github.com/zaizkuu</a></p>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:jonjonalbao66@gmail.com">jonjonalbao66@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/zaizkuu" target="_blank">github.com/zaizkuu</a></p>
-</section>
-
-<footer>
-    <p>&copy; 2025 Jon Jon Albao. All Rights Reserved.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Jon Jon Albao. All Rights Reserved.</p>
+    </footer>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
