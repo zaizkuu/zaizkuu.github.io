@@ -7,25 +7,25 @@ body {
     color: #333;
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
 }
+
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    overflow: hidden;
-    padding-bottom: 2rem;
+    max-width: 100%;
+    margin: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    padding-bottom: 0;
 }
 
 header {
-    background: linear-gradient(135deg, #0078d7 60%, #00b4d8 100%);
-    color: white;
-    padding: 2.5rem 1rem 2rem 1rem;
-    text-align: center;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,120,215,0.08);
+    width: 100%;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #0078d7 0%, #00b4d8 100%);
+    margin-bottom: 3rem;
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     position: relative;
 }
 
@@ -35,12 +35,17 @@ header .profile-pic {
 }
 
 nav {
-    background: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(34, 34, 34, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 nav a {
@@ -59,13 +64,12 @@ nav a:hover, nav a.active {
 }
 
 section {
-    max-width: 800px;
-    margin: 2rem auto 0 auto;
-    padding: 2rem 1.5rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    position: relative;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
     animation: fadeIn 0.6s ease-out;
 }
 
@@ -78,6 +82,10 @@ h2 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     letter-spacing: 1px;
+}
+
+.skills {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .skills span {
@@ -150,8 +158,9 @@ footer {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
     margin-top: 1.5rem;
 }
 
@@ -243,20 +252,18 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
-    .container {
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 1rem;
     }
-    header, section {
-        padding: 1.2rem 0.5rem;
+    
+    #about {
+        grid-template-columns: 1fr;
     }
-    #themeToggle {
-        right: 1rem;
-        top: 1rem;
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+    
+    section {
+        padding: 2rem 1rem;
+        margin: 2rem 1rem;
     }
 }
 
@@ -276,7 +283,7 @@ footer {
 }
 
 .dark-mode section {
-    background: #222;
+    background: rgba(34, 34, 34, 0.95);
     color: #f4f4f4;
     box-shadow: 0 2px 8px rgba(0,0,0,0.24);
 }
@@ -448,4 +455,112 @@ footer {
 /* Update dark mode styles */
 .dark-mode .project-overlay {
     background: rgba(0,0,0,0.8);
+}
+
+/* Add new sections styling */
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+#projects {
+    background: transparent;
+    box-shadow: none;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.cta-primary {
+    background: white;
+    color: #0078d7;
+}
+
+.cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-3px);
+}
+
+/* Add smooth scroll padding for fixed nav */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(34, 34, 34, 0.95);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.3s ease;
+    }
+
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
 }

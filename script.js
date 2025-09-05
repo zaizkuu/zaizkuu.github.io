@@ -68,3 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: 100
     });
 });
+
+// Mobile menu toggle
+const mobileMenuBtn = document.createElement('button');
+mobileMenuBtn.className = 'mobile-menu-btn';
+mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+document.querySelector('.nav-container').appendChild(mobileMenuBtn);
+
+mobileMenuBtn.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
