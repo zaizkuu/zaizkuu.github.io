@@ -10,11 +10,21 @@ html {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jon Jon Albao | Portfolio CV</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 <div class="container">
     <header>
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+        <div class="profile-container">
+            <img src="https://ui-avatars.com/api/?name=Jon+Jon+Albao&size=150&background=0078d7&color=fff" 
+                 alt="Profile Picture" class="profile-pic">
+            <div class="social-icons">
+                <a href="https://github.com/zaizkuu" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:jonjonalbao66@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
         <h1>Jon Jon Albao</h1>
         <p>Full-Stack Developer | Problem Solver | Tech Innovator</p>
         <p>Email: <a href="mailto:jonjonalbao66@gmail.com">jonjonalbao66@gmail.com</a> | 
@@ -89,21 +99,26 @@ html {
     </section>
 
     <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-image placeholder"></div>
-                <h3>Project 1</h3>
-                <p>Description of your awesome project goes here.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>React</span>
+    <h2>Projects</h2>
+    <div class="project-grid">
+        <div class="project-card" data-aos="fade-up">
+            <div class="project-image">
+                <img src="https://picsum.photos/seed/project1/400/250" alt="Project 1">
+                <div class="project-overlay">
+                    <a href="#" class="preview-btn"><i class="fas fa-eye"></i> Preview</a>
                 </div>
-                <a href="#" class="project-link">View Project →</a>
             </div>
-            <!-- Add more project cards as needed -->
+            <h3>Project 1</h3>
+            <p>Description of your awesome project goes here.</p>
+            <div class="project-tags">
+                <span><i class="fab fa-js"></i> JavaScript</span>
+                <span><i class="fab fa-react"></i> React</span>
+            </div>
+            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
         </div>
-    </section>
+        <!-- Add more project cards with different seed numbers -->
+    </div>
+</section>
 
     <section id="education">
         <h2>Education</h2>
@@ -133,5 +148,6 @@ html {
 </div>
 <button id="scrollTop" class="scroll-top">↑</button>
 <script src="script.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 </html>

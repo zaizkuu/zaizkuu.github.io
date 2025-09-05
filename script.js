@@ -59,3 +59,12 @@ const skillsSection = document.querySelector('#skills');
 if (skillsSection) {
     observer.observe(skillsSection);
 }
+
+// Initialize AOS
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+});
