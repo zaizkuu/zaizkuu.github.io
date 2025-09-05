@@ -1,5 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     try {
+        const animateSkills = () => {
+    const skillItems = document.querySelectorAll('.skill-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progress = entry.target.querySelector('.progress');
+                const percent = entry.target.querySelector('.percent');
+                const width = percent.textContent;
+                
+                // Set custom property for animation
+                progress.style.setProperty('--progress', width);
+                
+                // Add animation classes
+                progress.classList.add('animate');
+                percent.classList.add('show');
+                
+                // Remove observer after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    skillItems.forEach(skill => observer.observe(skill));
+};
+
+// Call the function after DOM is loaded
+animateSkills();
         // Dark mode toggle
         const toggleBtn = document.getElementById('themeToggle');
         if (toggleBtn) {
