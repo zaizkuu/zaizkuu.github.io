@@ -3,7 +3,7 @@ const toggleBtn = document.getElementById('themeToggle');
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     toggleBtn.textContent = 
-        document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 });
 
 // Scroll to top button
@@ -41,25 +41,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Intersection Observer for skills section
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.progress').forEach(progress => {
-                progress.style.animation = 'none';
-                progress.offsetHeight; // Trigger reflow
-                progress.style.animation = 'fillBar 1.5s ease forwards';
-            });
-        }
-    });
-}, { threshold: 0.5 });
-
-// Observe the skills section
-const skillsSection = document.querySelector('#skills');
-if (skillsSection) {
-    observer.observe(skillsSection);
-}
-
 // Initialize AOS
 document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
@@ -69,15 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile menu toggle
-const mobileMenuBtn = document.createElement('button');
-mobileMenuBtn.className = 'mobile-menu-btn';
-mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-document.querySelector('.nav-container').appendChild(mobileMenuBtn);
-
-mobileMenuBtn.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
 // Mobile menu functionality
 const mobileMenuBtn = document.createElement('button');
 mobileMenuBtn.className = 'mobile-menu-btn';
@@ -106,3 +78,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
     });
 });
+
+// Intersection Observer for skills animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.progress').forEach(progress => {
+                progress.style.animation = 'none';
+                progress.offsetHeight; // Trigger reflow
+                progress.style.animation = 'fillBar 1.5s ease forwards';
+            });
+        }
+    });
+}, { threshold: 0.5 });
+
+// Observe the skills section
+const skillsSection = document.querySelector('#skills');
+if (skillsSection) {
+    observer.observe(skillsSection);
+}
