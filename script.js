@@ -1,99 +1,69 @@
-// Dark mode toggle
-const toggleBtn = document.getElementById('themeToggle');
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    toggleBtn.textContent = 
-        document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-});
-
-// Scroll to top button
-const scrollBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollBtn.classList.add('show');
-    } else {
-        scrollBtn.classList.remove('show');
-    }
-});
-
-scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Active navigation highlight
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Initialize AOS
 document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
-});
-
-// Mobile menu functionality
-const mobileMenuBtn = document.createElement('button');
-mobileMenuBtn.className = 'mobile-menu-btn';
-mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-document.querySelector('.nav-container').insertBefore(mobileMenuBtn, document.querySelector('.nav-right'));
-
-mobileMenuBtn.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-    mobileMenuBtn.innerHTML = document.querySelector('.nav-links').classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-container')) {
-        document.querySelector('.nav-links').classList.remove('active');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    }
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('active');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    });
-});
-
-// Intersection Observer for skills animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.progress').forEach(progress => {
-                progress.style.animation = 'none';
-                progress.offsetHeight; // Trigger reflow
-                progress.style.animation = 'fillBar 1.5s ease forwards';
+    try {
+        // Dark mode toggle
+        const toggleBtn = document.getElementById('themeToggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                toggleBtn.textContent = 
+                    document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
             });
         }
-    });
-}, { threshold: 0.5 });
 
-// Observe the skills section
-const skillsSection = document.querySelector('#skills');
-if (skillsSection) {
-    observer.observe(skillsSection);
-}
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollTop');
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                scrollBtn.classList.toggle('show', window.scrollY > 300);
+            });
+
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('active') && !e.target.closest('.nav-container')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+        }
+
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                disable: window.innerWidth < 768,
+                once: true,
+                duration: 800,
+                offset: 100
+            });
+        }
+    } catch (error) {
+        console.error('Error initializing scripts:', error);
+    }
+});
