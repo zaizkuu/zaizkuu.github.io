@@ -78,3 +78,31 @@ document.querySelector('.nav-container').appendChild(mobileMenuBtn);
 mobileMenuBtn.addEventListener('click', () => {
     document.querySelector('.nav-links').classList.toggle('active');
 });
+// Mobile menu functionality
+const mobileMenuBtn = document.createElement('button');
+mobileMenuBtn.className = 'mobile-menu-btn';
+mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+document.querySelector('.nav-container').insertBefore(mobileMenuBtn, document.querySelector('.nav-right'));
+
+mobileMenuBtn.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+    mobileMenuBtn.innerHTML = document.querySelector('.nav-links').classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-container')) {
+        document.querySelector('.nav-links').classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
