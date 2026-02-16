@@ -16,7 +16,6 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
@@ -53,35 +52,10 @@
     <div class="hero__content reveal">
       <p class="hero__greeting">Hi, I'm</p>
       <h1 class="hero__name" aria-label="Zaizkuu">
-        <svg class="hero__name-svg" viewBox="0 0 620 100" aria-hidden="true">
-          <defs>
-            <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#7c3aed" />
-              <stop offset="50%" stop-color="#06b6d4" />
-              <stop offset="100%" stop-color="#8b5cf6" />
-            </linearGradient>
-          </defs>
-          <g fill="none" stroke="url(#nameGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <!-- Z -->
-            <path class="draw-letter" d="M10 20 L70 20 L10 80 L70 80" />
-            <!-- a -->
-            <path class="draw-letter"
-              d="M105 45 C105 33 93 25 82 30 C75 34 80 42 88 42 L105 42 L105 30 C105 55 105 80 105 80 C95 85 80 85 78 70 C76 58 85 48 98 50" />
-            <!-- i -->
-            <path class="draw-letter" d="M120 18 L120 22 M120 38 L120 80" />
-            <!-- z -->
-            <path class="draw-letter" d="M135 38 L170 38 L135 80 L170 80" />
-            <!-- k -->
-            <path class="draw-letter" d="M185 15 L185 80 M185 55 L215 38 M185 55 L215 80" />
-            <!-- u -->
-            <path class="draw-letter" d="M230 38 L230 65 C230 78 240 83 250 80 C258 78 262 70 262 62 L262 38" />
-            <!-- u -->
-            <path class="draw-letter" d="M278 38 L278 65 C278 78 288 83 298 80 C306 78 310 70 310 62 L310 38" />
-            <!-- dot -->
-            <circle class="draw-letter draw-letter--dot" cx="330" cy="75" r="6" />
-          </g>
-        </svg>
-        <span class="hero__name-text">Zaizkuu<span class="accent">.</span></span>
+        <span class="kinetic-letter" style="--i:0">Z</span><span class="kinetic-letter" style="--i:1">a</span><span
+          class="kinetic-letter" style="--i:2">i</span><span class="kinetic-letter" style="--i:3">z</span><span
+          class="kinetic-letter" style="--i:4">k</span><span class="kinetic-letter" style="--i:5">u</span><span
+          class="kinetic-letter" style="--i:6">u</span><span class="accent glitch-text" data-text=".">.</span>
       </h1>
       <p class="hero__tagline">
         <span class="kinetic-word" style="--w:0">Developer</span>
@@ -511,40 +485,7 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    // ── Anime.js SVG Draw Animation ──
-    (function () {
-      var svgEl = document.querySelector('.hero__name-svg');
-      var nameText = document.querySelector('.hero__name-text');
-      if (!svgEl || typeof anime === 'undefined') return;
-
-      var letters = svgEl.querySelectorAll('.draw-letter');
-
-      // Set initial dash values based on path length
-      letters.forEach(function (letter) {
-        var length = letter.getTotalLength ? letter.getTotalLength() : 200;
-        letter.setAttribute('stroke-dasharray', length);
-        letter.setAttribute('stroke-dashoffset', length);
-      });
-
-      // Delay to sync with page reveal
-      setTimeout(function () {
-        anime({
-          targets: letters,
-          strokeDashoffset: [anime.stagger([600, 100]), 0],
-          easing: 'easeInOutQuad',
-          duration: 1800,
-          delay: anime.stagger(150),
-          complete: function () {
-            if (nameText) nameText.classList.add('visible');
-            svgEl.classList.add('drawn');
-          }
-        });
-      }, 600);
-    })();
-  </script>
 </body>
 
 </html>
