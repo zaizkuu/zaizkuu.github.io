@@ -1109,6 +1109,21 @@ button {
   object-fit: contain;
 }
 
+.project-card__img-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-card__image {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.03);
+}
+
 /* ── Contact ─────────────────────────────────────────────────── */
 .contact__socials-grid {
   display: grid;
