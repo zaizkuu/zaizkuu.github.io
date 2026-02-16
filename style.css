@@ -314,10 +314,49 @@ button {
   letter-spacing: -0.03em;
   line-height: 1;
   margin-bottom: var(--space-md);
-  overflow: hidden;
+  position: relative;
 }
 
-/* ── Kinetic Letters (Hero Name) ─────────────────────────────── */
+/* ── SVG Draw Name ───────────────────────────────────────────── */
+.hero__name-svg {
+  display: block;
+  width: clamp(280px, 60vw, 620px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero__name-svg .draw-letter {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.hero__name-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  font-size: inherit;
+}
+
+.hero__name-text.visible {
+  opacity: 1;
+}
+
+.hero__name-svg.drawn {
+  animation: svgFadeOut 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes svgFadeOut {
+  to {
+    opacity: 0.15;
+  }
+}
+
 .kinetic-letter {
   display: inline-block;
   opacity: 0;
