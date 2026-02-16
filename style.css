@@ -1137,7 +1137,8 @@ button {
   color: #fff;
 }
 
-.contact__social-icon svg {
+.contact__social-icon svg,
+.contact__social-icon img {
   width: 24px;
   height: 24px;
 }
