@@ -314,13 +314,245 @@ button {
   letter-spacing: -0.03em;
   line-height: 1;
   margin-bottom: var(--space-md);
+  overflow: hidden;
 }
 
+/* ── Kinetic Letters (Hero Name) ─────────────────────────────── */
+.kinetic-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%) rotateX(-80deg);
+  animation: letterReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(0.6s + var(--i) * 0.08s);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.kinetic-letter:hover {
+  transform: translateY(-8px) scale(1.15);
+  color: var(--accent2);
+}
+
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) rotateX(-80deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* ── Glitch Accent Dot ───────────────────────────────────────── */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: letterReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    glitchFlicker 3s ease-in-out infinite 2s;
+  animation-delay: calc(0.6s + 7 * 0.08s), 2s;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.glitch-text::before {
+  color: #06b6d4;
+  animation: glitchShift1 3s ease-in-out infinite 2s;
+}
+
+.glitch-text::after {
+  color: #ef4444;
+  animation: glitchShift2 3s ease-in-out infinite 2s;
+}
+
+@keyframes glitchFlicker {
+
+  0%,
+  92%,
+  100% {
+    opacity: 1;
+  }
+
+  93% {
+    opacity: 0.8;
+  }
+
+  94% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0.6;
+  }
+
+  96% {
+    opacity: 1;
+  }
+}
+
+@keyframes glitchShift1 {
+
+  0%,
+  90%,
+  100% {
+    opacity: 0;
+    transform: translate(0);
+  }
+
+  93% {
+    opacity: 0.8;
+    transform: translate(-3px, -2px);
+    clip-path: inset(20% 0 30% 0);
+  }
+
+  94% {
+    opacity: 0;
+  }
+
+  96% {
+    opacity: 0.6;
+    transform: translate(2px, 1px);
+    clip-path: inset(50% 0 10% 0);
+  }
+
+  97% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitchShift2 {
+
+  0%,
+  91%,
+  100% {
+    opacity: 0;
+    transform: translate(0);
+  }
+
+  94% {
+    opacity: 0.7;
+    transform: translate(3px, 2px);
+    clip-path: inset(40% 0 20% 0);
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  97% {
+    opacity: 0.5;
+    transform: translate(-2px, -1px);
+    clip-path: inset(10% 0 60% 0);
+  }
+
+  98% {
+    opacity: 0;
+  }
+}
+
+/* ── Kinetic Words (Tagline) ─────────────────────────────────── */
 .hero__tagline {
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   color: var(--text-muted);
   font-weight: 300;
   margin-bottom: var(--space-lg);
+  overflow: hidden;
+}
+
+.kinetic-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: wordSlideUp 0.6s ease forwards;
+  animation-delay: calc(1.4s + var(--w) * 0.15s);
+  margin: 0 0.2em;
+}
+
+.kinetic-word--amp {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@keyframes wordSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Text Scramble (Description) ─────────────────────────────── */
+[data-scramble] {
+  opacity: 0;
+  animation: scrambleFadeIn 0.8s ease forwards 2s;
+}
+
+@keyframes scrambleFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    letter-spacing: 0.3em;
+  }
+
+  50% {
+    opacity: 0.7;
+    filter: blur(2px);
+    letter-spacing: 0.05em;
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: normal;
+  }
+}
+
+/* ── Kinetic Section Titles ──────────────────────────────────── */
+.section__title {
+  position: relative;
+  display: inline-block;
+  transition: letter-spacing 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section__title:hover {
+  letter-spacing: 0.04em;
+}
+
+.section__title .accent {
+  position: relative;
+}
+
+.section__title .accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section__title:hover .accent::after {
+  width: 100%;
 }
 
 .hero__desc {

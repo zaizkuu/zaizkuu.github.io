@@ -6,14 +6,14 @@
   'use strict';
 
   // ── DOM Refs ─────────────────────────────────────────────────
-  const nav         = document.getElementById('nav');
-  const navToggle   = document.getElementById('navToggle');
-  const navLinks    = document.getElementById('navLinks');
-  const cursorGlow  = document.getElementById('cursorGlow');
-  const hero        = document.getElementById('hero');
-  const reveals     = document.querySelectorAll('.reveal');
-  const navAnchors  = document.querySelectorAll('.nav__link');
-  const filterBtns  = document.querySelectorAll('.filter-btn');
+  const nav = document.getElementById('nav');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const cursorGlow = document.getElementById('cursorGlow');
+  const hero = document.getElementById('hero');
+  const reveals = document.querySelectorAll('.reveal');
+  const navAnchors = document.querySelectorAll('.nav__link');
+  const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
   const contactForm = document.getElementById('contactForm');
 
@@ -78,7 +78,7 @@
 
   function updateGlow(e) {
     cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top  = e.clientY + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
   }
 
   document.addEventListener('mousemove', (e) => {
@@ -185,24 +185,40 @@
     card.style.transitionDelay = `${i * 0.1}s`;
   });
 
-  // ── Typing effect for hero greeting (optional flourish) ──────
-  const greeting = document.querySelector('.hero__greeting');
-  if (greeting) {
-    const text = greeting.textContent;
-    greeting.textContent = '';
-    greeting.style.opacity = '1';
+  // ── Text Scramble Effect (Hero Description) ──────────────────
+  const scrambleEl = document.querySelector('[data-scramble]');
+  if (scrambleEl) {
+    const finalText = scrambleEl.textContent;
+    const chars = '!<>-_\\/[]{}—=+*^?#_░▒▓';
+    let frame = 0;
+    const totalFrames = finalText.length * 3;
 
-    let i = 0;
-    function typeChar() {
-      if (i < text.length) {
-        greeting.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeChar, 80);
+    function scrambleStep() {
+      let output = '';
+      const progress = frame / totalFrames;
+
+      for (let i = 0; i < finalText.length; i++) {
+        if (finalText[i] === ' ') {
+          output += ' ';
+        } else if (i / finalText.length < progress) {
+          output += finalText[i];
+        } else {
+          output += chars[Math.floor(Math.random() * chars.length)];
+        }
+      }
+
+      scrambleEl.textContent = output;
+      frame++;
+
+      if (frame <= totalFrames) {
+        requestAnimationFrame(scrambleStep);
+      } else {
+        scrambleEl.textContent = finalText;
       }
     }
 
-    // Start typing after reveal animation
-    setTimeout(typeChar, 800);
+    // Start after other animations settle
+    setTimeout(scrambleStep, 2000);
   }
 
 })();
