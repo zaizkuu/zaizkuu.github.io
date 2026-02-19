@@ -21,8 +21,8 @@
   --border-hover: rgba(255, 255, 255, 0.12);
   --text: #e4e4e7;
   --text-muted: #71717a;
-  --accent: #7c3aed;
-  --accent2: #06b6d4;
+  --accent: #7B4040;
+  --accent2: #C07868;
   --gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
 
   /* Typography */
@@ -121,7 +121,7 @@ button {
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(123, 64, 64, 0.12) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   transition: opacity 0.4s;
   opacity: 0;
@@ -145,7 +145,7 @@ button {
 }
 
 .nav.scrolled {
-  background: rgba(10, 10, 15, 0.8);
+  background: rgba(10, 10, 15, 0.85);
   -webkit-backdrop-filter: var(--glass);
   backdrop-filter: var(--glass);
   box-shadow: 0 1px 0 var(--border);
@@ -256,7 +256,7 @@ button {
 .hero__orb--1 {
   width: 500px;
   height: 500px;
-  background: var(--accent);
+  background: #3B1520;
   top: -10%;
   left: -5%;
   animation-delay: 0s;
@@ -265,7 +265,7 @@ button {
 .hero__orb--2 {
   width: 400px;
   height: 400px;
-  background: var(--accent2);
+  background: #C07868;
   bottom: -15%;
   right: -5%;
   animation-delay: -3s;
@@ -274,7 +274,7 @@ button {
 .hero__orb--3 {
   width: 300px;
   height: 300px;
-  background: #8b5cf6;
+  background: #7B4040;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -365,12 +365,12 @@ button {
 }
 
 .glitch-text::before {
-  color: #06b6d4;
+  color: #C07868;
   animation: glitchShift1 3s ease-in-out infinite 2s;
 }
 
 .glitch-text::after {
-  color: #ef4444;
+  color: #3B1520;
   animation: glitchShift2 3s ease-in-out infinite 2s;
 }
 
@@ -608,7 +608,7 @@ button {
   position: relative;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(124, 58, 237, 0.02);
+  background: rgba(123, 64, 64, 0.04);
 }
 
 /* Fade masks on edges */
@@ -706,12 +706,12 @@ button {
 .btn--primary {
   background: var(--gradient);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 20px rgba(123, 64, 64, 0.35);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 8px 30px rgba(123, 64, 64, 0.45);
 }
 
 .btn--outline {
@@ -721,7 +721,7 @@ button {
 
 .btn--outline:hover {
   border-color: var(--accent);
-  background: rgba(124, 58, 237, 0.08);
+  background: rgba(123, 64, 64, 0.1);
   transform: translateY(-2px);
 }
 
@@ -777,11 +777,11 @@ button {
   inset: -12px;
   border-radius: 50%;
   background: conic-gradient(from 0deg,
-      #7c3aed,
-      #06b6d4,
-      #8b5cf6,
-      #06b6d4,
-      #7c3aed);
+      #3B1520,
+      #C07868,
+      #7B4040,
+      #C07868,
+      #3B1520);
   animation: ringRotate 8s linear infinite;
   opacity: 0.6;
   z-index: 0;
@@ -808,8 +808,8 @@ button {
   inset: -30px;
   border-radius: 50%;
   background: radial-gradient(circle,
-      rgba(124, 58, 237, 0.25) 0%,
-      rgba(6, 182, 212, 0.1) 40%,
+      rgba(123, 64, 64, 0.3) 0%,
+      rgba(192, 120, 104, 0.12) 40%,
       transparent 70%);
   z-index: 0;
   animation: glowPulse 4s ease-in-out infinite alternate;
@@ -841,32 +841,32 @@ button {
 .about__corner--tl {
   top: -6px;
   left: -6px;
-  border-top: 3px solid #7c3aed;
-  border-left: 3px solid #7c3aed;
+  border-top: 3px solid #7B4040;
+  border-left: 3px solid #7B4040;
   border-radius: 6px 0 0 0;
 }
 
 .about__corner--tr {
   top: -6px;
   right: -6px;
-  border-top: 3px solid #06b6d4;
-  border-right: 3px solid #06b6d4;
+  border-top: 3px solid #C07868;
+  border-right: 3px solid #C07868;
   border-radius: 0 6px 0 0;
 }
 
 .about__corner--bl {
   bottom: -6px;
   left: -6px;
-  border-bottom: 3px solid #06b6d4;
-  border-left: 3px solid #06b6d4;
+  border-bottom: 3px solid #C07868;
+  border-left: 3px solid #C07868;
   border-radius: 0 0 0 6px;
 }
 
 .about__corner--br {
   bottom: -6px;
   right: -6px;
-  border-bottom: 3px solid #8b5cf6;
-  border-right: 3px solid #8b5cf6;
+  border-bottom: 3px solid #3B1520;
+  border-right: 3px solid #3B1520;
   border-radius: 0 0 6px 0;
 }
 
@@ -881,8 +881,8 @@ button {
   overflow: hidden;
   z-index: 1;
   box-shadow:
-    0 8px 32px rgba(124, 58, 237, 0.2),
-    0 0 0 1px rgba(124, 58, 237, 0.1);
+    0 8px 32px rgba(123, 64, 64, 0.25),
+    0 0 0 1px rgba(123, 64, 64, 0.12);
   transition: box-shadow 0.4s, transform 0.4s;
 }
 
@@ -933,8 +933,8 @@ button {
 
 .about__image-wrapper:hover .about__image-frame {
   box-shadow:
-    0 12px 48px rgba(124, 58, 237, 0.35),
-    0 0 0 1px rgba(124, 58, 237, 0.2);
+    0 12px 48px rgba(123, 64, 64, 0.4),
+    0 0 0 1px rgba(123, 64, 64, 0.25);
 }
 
 .about__image-wrapper:hover .about__avatar-img {
@@ -1050,7 +1050,7 @@ button {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(123, 64, 64, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1091,8 +1091,8 @@ button {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--accent2);
-  background: rgba(6, 182, 212, 0.08);
-  border: 1px solid rgba(6, 182, 212, 0.15);
+  background: rgba(192, 120, 104, 0.1);
+  border: 1px solid rgba(192, 120, 104, 0.2);
   border-radius: 999px;
   font-family: var(--font-mono);
   letter-spacing: 0.02em;
@@ -1154,7 +1154,7 @@ button {
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 12px rgba(123, 64, 64, 0.45);
 }
 
 .cert-card__info {
@@ -1383,14 +1383,14 @@ button {
   border-color: var(--border-hover);
   background: var(--bg-card-hover);
   transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 16px 32px rgba(123, 64, 64, 0.2);
 }
 
 .contact__social-icon {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(123, 64, 64, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;

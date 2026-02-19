@@ -156,7 +156,7 @@
       const originalHTML = btn.innerHTML;
 
       btn.innerHTML = '<span>Sent! ✓</span>';
-      btn.style.background = 'linear-gradient(135deg, #10b981, #06b6d4)';
+      btn.style.background = 'linear-gradient(135deg, #7B4040, #C07868)';
       btn.disabled = true;
 
       setTimeout(() => {
