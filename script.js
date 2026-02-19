@@ -102,39 +102,7 @@
     }
   });
 
-  // ── Projects Carousel ─────────────────────────────────────────
-  const carouselTrack = document.querySelector('.carousel__track');
-  const carouselSlides = document.querySelectorAll('.carousel__slide');
-  const prevBtn = document.getElementById('carouselPrev');
-  const nextBtn = document.getElementById('carouselNext');
-  const counterEl = document.getElementById('carouselCounter');
-  let currentSlide = 0;
-
-  function updateCarousel() {
-    if (!carouselTrack) return;
-    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-    if (counterEl) {
-      const cur = String(currentSlide + 1).padStart(2, '0');
-      const total = String(carouselSlides.length).padStart(2, '0');
-      counterEl.textContent = `${cur} / ${total}`;
-    }
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-      updateCarousel();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % carouselSlides.length;
-      updateCarousel();
-    });
-  }
-
-  // ── Tilt effect on bento cards ───────────────────────────────
+  // ── Tilt effect on bento / project / code cards ─────────────
   const tiltCards = document.querySelectorAll('[data-tilt]');
 
   tiltCards.forEach(card => {
@@ -198,11 +166,5 @@
   document.querySelectorAll('.hero__col.reveal, .hero__center.reveal').forEach(el => {
     revealObserver.observe(el);
   });
-
-  // ── Observe carousel reveal ────────────────────────────────
-  const carouselEl = document.getElementById('projectsCarousel');
-  if (carouselEl) {
-    revealObserver.observe(carouselEl);
-  }
 
 })();

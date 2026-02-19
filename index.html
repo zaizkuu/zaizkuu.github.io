@@ -229,19 +229,43 @@
             a keen eye for design and a love for problem-solving, I turn ideas into reality through code.</p>
           <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
             leveling up my skills through creative side projects.</p>
+          <div class="about__stats">
+            <div class="stat-card">
+              <span class="stat-card__number">2+</span>
+              <span class="stat-card__label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number">10+</span>
+              <span class="stat-card__label">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number">5+</span>
+              <span class="stat-card__label">Technologies</span>
+            </div>
+          </div>
         </div>
-        <div class="about__stats">
-          <div class="stat-card">
-            <span class="stat-card__number">2+</span>
-            <span class="stat-card__label">Years Experience</span>
+
+        <!-- Code Editor Card -->
+        <div class="code-card" data-tilt>
+          <div class="code-card__header">
+            <div class="code-card__dots">
+              <span class="code-card__dot code-card__dot--red"></span>
+              <span class="code-card__dot code-card__dot--yellow"></span>
+              <span class="code-card__dot code-card__dot--green"></span>
+            </div>
+            <span class="code-card__filename">● Portfolio.ts</span>
           </div>
-          <div class="stat-card">
-            <span class="stat-card__number">10+</span>
-            <span class="stat-card__label">Projects Built</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-card__number">5+</span>
-            <span class="stat-card__label">Technologies</span>
+          <div class="code-card__body">
+            <pre
+              class="code-card__code"><span class="code-line"><span class="line-num">01</span>  <span class="code-keyword">const</span> <span class="code-var">developer</span> = {</span>
+<span class="code-line"><span class="line-num">02</span>    <span class="code-prop">name</span>: <span class="code-string">'Zaizkuu'</span>,</span>
+<span class="code-line"><span class="line-num">03</span>    <span class="code-prop">focus</span>: <span class="code-string">'Creative Development'</span>,</span>
+<span class="code-line"><span class="line-num">04</span>    <span class="code-prop">skills</span>: [<span class="code-string">'Web'</span>, <span class="code-string">'Design'</span>, <span class="code-string">'Video'</span>],</span>
+<span class="code-line"><span class="line-num">05</span>    <span class="code-prop">passionate</span>: <span class="code-bool">true</span>,</span>
+<span class="code-line"><span class="line-num">06</span>    <span class="code-prop">motto</span>: <span class="code-string">"Build with Purpose"</span></span>
+<span class="code-line"><span class="line-num">07</span>  };</span>
+<span class="code-line"><span class="line-num">08</span></span>
+<span class="code-line"><span class="line-num">09</span>  <span class="code-var">developer</span>.<span class="code-func">showcase</span>();</span></pre>
           </div>
         </div>
       </div>
@@ -372,108 +396,94 @@
     </div>
   </section>
 
-  <!-- ═══════════ PROJECTS (CAROUSEL) ═══════════ -->
+  <!-- ═══════════ PROJECTS ═══════════ -->
   <section class="section projects" id="projects">
     <div class="container">
       <span class="section__label reveal">04 / Work</span>
       <h2 class="section__title reveal">Featured <span class="accent">Projects</span></h2>
       <p class="section__subtitle reveal">SOME OF MY LATEST WORK</p>
-    </div>
 
-    <!-- Carousel -->
-    <div class="carousel reveal" id="projectsCarousel">
-      <div class="carousel__track">
-        <!-- Slide 1: Thommy Food Hub -->
-        <div class="carousel__slide">
-          <div class="carousel__media">
-            <video class="carousel__video" controls muted loop playsinline preload="metadata">
-              <source src="Tapang.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+      <div class="projects__grid">
+        <!-- Video Project: Thommy Food Hub -->
+        <article class="project-card project-card--wide reveal" data-tilt>
+          <div class="project-card__preview">
+            <div class="project-card__video-wrap">
+              <video class="project-card__video" controls muted loop playsinline preload="metadata">
+                <source src="Tapang.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
-          <div class="carousel__info">
-            <h3 class="carousel__title">Thommy Food Hub Digital Ad Campaign</h3>
-            <p class="carousel__desc">I utilized dynamic motion graphics to bring the brand's playful mascot and
+          <div class="project-card__info">
+            <h3 class="project-card__title">Thommy Food Hub Digital Ad Campaign</h3>
+            <p class="project-card__desc">I utilized dynamic motion graphics to bring the brand's playful mascot and
               vibrant menu to life. By compositing product shots with dynamic liquid splashes and 3D-style floating
               ingredients, the video creates an immersive visual experience.</p>
-            <div class="carousel__tech">
+            <div class="project-card__tech">
               <span class="tag tag--sm">Motion Graphics</span>
               <span class="tag tag--sm">After Effects</span>
               <span class="tag tag--sm">Video Editing</span>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Slide 2: Magtanim -->
-        <div class="carousel__slide">
-          <div class="carousel__media">
-            <img src="abstract.png" alt="Magtanim - Geometric Digital Art" class="carousel__image" />
+        <!-- Image Project: Magtanim -->
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__preview">
+            <img src="abstract.png" alt="Magtanim - Geometric Digital Art" class="project-card__image" />
           </div>
-          <div class="carousel__info">
-            <h3 class="carousel__title">"Magtanim" - Geometric Digital Art</h3>
-            <p class="carousel__desc">This piece reimagines a familiar scene of local farmers at work through a
+          <div class="project-card__info">
+            <h3 class="project-card__title">"Magtanim" - Geometric Digital Art</h3>
+            <p class="project-card__desc">This piece reimagines a familiar scene of local farmers at work through a
               contemporary geometric lens. By breaking down the figures and the landscape into sharp, colorful
               triangles, the artwork captures the dynamic energy and collective effort of planting.</p>
-            <div class="carousel__tech">
+            <div class="project-card__tech">
               <span class="tag tag--sm">Digital Art</span>
               <span class="tag tag--sm">Geometric Design</span>
               <span class="tag tag--sm">Illustration</span>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Slide 3: Ad Campaign Poster -->
-        <div class="carousel__slide">
-          <div class="carousel__media">
+        <!-- Ad Campaign Poster -->
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__preview">
             <img src="Ad Campaign (Poster).jpg" alt="Thommy Food Hub - Bring Your Own Cup Campaign"
-              class="carousel__image" />
+              class="project-card__image" />
           </div>
-          <div class="carousel__info">
-            <h3 class="carousel__title">Thommy Food Hub — "Bring Your Own Cup" Campaign</h3>
-            <p class="carousel__desc">This energetic and eye-catching promotional poster was designed for Thommy Food
+          <div class="project-card__info">
+            <h3 class="project-card__title">Thommy Food Hub — "Bring Your Own Cup" Campaign</h3>
+            <p class="project-card__desc">This energetic and eye-catching promotional poster was designed for Thommy
+              Food
               Hub to encourage sustainability while driving sales. The campaign incentivizes eco-friendly behavior by
               offering a 10% discount to customers who bring their own cups.</p>
-            <div class="carousel__tech">
+            <div class="project-card__tech">
               <span class="tag tag--sm">Poster Design</span>
               <span class="tag tag--sm">Graphic Design</span>
               <span class="tag tag--sm">Branding</span>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Slide 4: Product Poster -->
-        <div class="carousel__slide">
-          <div class="carousel__media">
-            <img src="Poster.jpg" alt="Thommy Food Hub - Product Lineup Poster" class="carousel__image" />
+        <!-- Product Poster -->
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__preview">
+            <img src="Poster.jpg" alt="Thommy Food Hub - Product Lineup Poster" class="project-card__image" />
           </div>
-          <div class="carousel__info">
-            <h3 class="carousel__title">Thommy Food Hub — Product Lineup Poster</h3>
-            <p class="carousel__desc">Complementing the high-energy "Bring Your Own Cup" campaign, this poster adopts a
+          <div class="project-card__info">
+            <h3 class="project-card__title">Thommy Food Hub — Product Lineup Poster</h3>
+            <p class="project-card__desc">Complementing the high-energy "Bring Your Own Cup" campaign, this poster
+              adopts a
               clean, minimalist aesthetic to highlight the brand's core product lineup and competitive pricing. The
               design focuses on clarity and appetite appeal, positioning the beverages as an accessible, everyday luxury
               at the ₱39 price point.</p>
-            <div class="carousel__tech">
+            <div class="project-card__tech">
               <span class="tag tag--sm">Poster Design</span>
               <span class="tag tag--sm">Minimalist Design</span>
               <span class="tag tag--sm">Branding</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Nav controls -->
-      <div class="carousel__controls">
-        <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Previous project">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-            <path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-          </svg>
-        </button>
-        <span class="carousel__counter" id="carouselCounter">01 / 04</span>
-        <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Next project">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-            <path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
-        </button>
+        </article>
       </div>
     </div>
   </section>
