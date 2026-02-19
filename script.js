@@ -102,28 +102,37 @@
     }
   });
 
-  // ── Project Filter ───────────────────────────────────────────
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Update active state
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  // ── Projects Carousel ─────────────────────────────────────────
+  const carouselTrack = document.querySelector('.carousel__track');
+  const carouselSlides = document.querySelectorAll('.carousel__slide');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const counterEl = document.getElementById('carouselCounter');
+  let currentSlide = 0;
 
-      const filter = btn.dataset.filter;
+  function updateCarousel() {
+    if (!carouselTrack) return;
+    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    if (counterEl) {
+      const cur = String(currentSlide + 1).padStart(2, '0');
+      const total = String(carouselSlides.length).padStart(2, '0');
+      counterEl.textContent = `${cur} / ${total}`;
+    }
+  }
 
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.classList.remove('hidden');
-          // Re-trigger animation
-          card.style.animation = 'none';
-          card.offsetHeight; // force reflow
-          card.style.animation = '';
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+      updateCarousel();
     });
-  });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % carouselSlides.length;
+      updateCarousel();
+    });
+  }
 
   // ── Tilt effect on bento cards ───────────────────────────────
   const tiltCards = document.querySelectorAll('[data-tilt]');
@@ -185,40 +194,15 @@
     card.style.transitionDelay = `${i * 0.1}s`;
   });
 
-  // ── Text Scramble Effect (Hero Description) ──────────────────
-  const scrambleEl = document.querySelector('[data-scramble]');
-  if (scrambleEl) {
-    const finalText = scrambleEl.textContent;
-    const chars = '!<>-_\\/[]{}—=+*^?#_░▒▓';
-    let frame = 0;
-    const totalFrames = finalText.length * 3;
+  // ── Observe hero split reveals ──────────────────────────────
+  document.querySelectorAll('.hero__col.reveal, .hero__center.reveal').forEach(el => {
+    revealObserver.observe(el);
+  });
 
-    function scrambleStep() {
-      let output = '';
-      const progress = frame / totalFrames;
-
-      for (let i = 0; i < finalText.length; i++) {
-        if (finalText[i] === ' ') {
-          output += ' ';
-        } else if (i / finalText.length < progress) {
-          output += finalText[i];
-        } else {
-          output += chars[Math.floor(Math.random() * chars.length)];
-        }
-      }
-
-      scrambleEl.textContent = output;
-      frame++;
-
-      if (frame <= totalFrames) {
-        requestAnimationFrame(scrambleStep);
-      } else {
-        scrambleEl.textContent = finalText;
-      }
-    }
-
-    // Start after other animations settle
-    setTimeout(scrambleStep, 2000);
+  // ── Observe carousel reveal ────────────────────────────────
+  const carouselEl = document.getElementById('projectsCarousel');
+  if (carouselEl) {
+    revealObserver.observe(carouselEl);
   }
 
 })();
