@@ -162,9 +162,168 @@
     card.style.transitionDelay = `${i * 0.1}s`;
   });
 
+  // ── Staggered reveal for project cards ──────────────────────
+  document.querySelectorAll('.project-card.reveal').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.15}s`;
+  });
+
+  // ── Staggered reveal for cert cards ─────────────────────────
+  document.querySelectorAll('.cert-card.reveal').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.2}s`;
+  });
+
   // ── Observe hero split reveals ──────────────────────────────
   document.querySelectorAll('.hero__col.reveal, .hero__center.reveal').forEach(el => {
     revealObserver.observe(el);
+  });
+
+  // ── Hero Name Letter-by-Letter Animation ───────────────────
+  const heroName = document.querySelector('.hero__name');
+  if (heroName) {
+    const text = heroName.textContent;
+    heroName.innerHTML = '';
+    Array.from(text).forEach((char, i) => {
+      if (char === ' ') {
+        const space = document.createElement('span');
+        space.className = 'letter-space';
+        heroName.appendChild(space);
+      } else {
+        const span = document.createElement('span');
+        span.className = 'letter';
+        span.textContent = char;
+        span.style.transitionDelay = `${0.8 + i * 0.05}s`;
+        heroName.appendChild(span);
+      }
+    });
+
+    // Trigger after hero becomes visible
+    const nameObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heroName.querySelectorAll('.letter').forEach(l => l.classList.add('visible'));
+          nameObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    nameObserver.observe(heroName);
+  }
+
+  // ── Stat Counter Animation ─────────────────────────────────
+  const statCards = document.querySelectorAll('.stat-card');
+
+  function animateCounter(card) {
+    const numEl = card.querySelector('.stat-card__number');
+    if (!numEl || card.classList.contains('counted')) return;
+
+    const rawText = numEl.textContent.trim();
+    const suffix = rawText.replace(/[0-9]/g, '');  // e.g. "+"
+    const target = parseInt(rawText);
+    if (isNaN(target)) return;
+
+    let current = 0;
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.round(eased * target);
+      numEl.textContent = current + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        numEl.textContent = target + suffix;
+        card.classList.add('counted');
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statCards.forEach(card => statObserver.observe(card));
+
+  // ── Staggered Contact Card Reveals ─────────────────────────
+  document.querySelectorAll('.contact__social-card.reveal').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+  // ── Futuristic Text Resolve / Scramble Effect ───────────────
+  const resolveChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*<>[]{}|/\\';
+  const resolveEls = document.querySelectorAll('[data-resolve]');
+
+  function scrambleResolve(el, delay = 0) {
+    const finalText = el.textContent;
+    const len = finalText.length;
+    let resolved = 0;
+    const speed = 1;              // chars resolved per frame
+    const scrambleFrames = 3;     // frames of scramble before resolving each char
+    let frame = 0;
+
+    // Start with scrambled text
+    el.textContent = Array.from(finalText).map(c =>
+      c === ' ' ? ' ' : resolveChars[Math.floor(Math.random() * resolveChars.length)]
+    ).join('');
+    el.classList.add('resolve--active');
+
+    function tick() {
+      if (resolved >= len) {
+        el.textContent = finalText;
+        el.classList.remove('resolve--active');
+        el.classList.add('resolve--done');
+        return;
+      }
+
+      frame++;
+
+      // Build the display string
+      let display = '';
+      for (let i = 0; i < len; i++) {
+        if (i < resolved) {
+          display += finalText[i];           // already decoded
+        } else if (finalText[i] === ' ') {
+          display += ' ';                    // keep spaces
+        } else {
+          display += resolveChars[Math.floor(Math.random() * resolveChars.length)];
+        }
+      }
+      el.textContent = display;
+
+      // Every N frames, lock in one more real character
+      if (frame % scrambleFrames === 0) {
+        resolved += speed;
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    setTimeout(() => requestAnimationFrame(tick), delay);
+  }
+
+  // Observer triggers the scramble resolve when visible
+  const resolveObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('resolve--done')) {
+        const idx = Array.from(resolveEls).indexOf(entry.target);
+        scrambleResolve(entry.target, idx * 800); // stagger each paragraph
+        resolveObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  resolveEls.forEach(el => {
+    el.dataset.resolveOriginal = el.textContent;  // store original
+    resolveObserver.observe(el);
   });
 
 })();

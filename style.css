@@ -355,6 +355,19 @@ button {
 .hero__center {
   position: relative;
   z-index: 3;
+  text-align: center;
+}
+
+.hero__name {
+  margin-top: var(--space-lg);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.hero__name .accent {
+  color: var(--accent);
 }
 
 .hero__photo-wrap {
@@ -732,6 +745,7 @@ button {
   align-items: start;
   max-width: 900px;
   margin: 0 auto;
+  overflow: visible;
 }
 
 .about__text p {
@@ -739,6 +753,19 @@ button {
   margin-bottom: var(--space-md);
   font-size: 1rem;
   line-height: 1.8;
+  transition: color 0.4s ease;
+}
+
+/* Futuristic resolve effect */
+[data-resolve].resolve--active {
+  font-family: var(--font-mono);
+  color: var(--accent2);
+  opacity: 0.9;
+}
+
+[data-resolve].resolve--done {
+  font-family: inherit;
+  color: var(--text-muted);
 }
 
 .about__stats {
@@ -1130,11 +1157,12 @@ button {
 
 .code-card__body {
   padding: 1.25rem 1.5rem;
+  overflow-x: auto;
 }
 
 .code-card__code {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   line-height: 1.9;
   color: var(--text-muted);
   margin: 0;
@@ -1290,6 +1318,40 @@ button {
   transform: translateY(0);
 }
 
+/* Direction variants */
+.reveal--left {
+  transform: translateX(-60px);
+}
+
+.reveal--left.visible {
+  transform: translateX(0);
+}
+
+.reveal--right {
+  transform: translateX(60px);
+}
+
+.reveal--right.visible {
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  transform: scale(0.85);
+}
+
+.reveal--scale.visible {
+  transform: scale(1);
+}
+
+.reveal--flip {
+  transform: perspective(800px) rotateY(25deg);
+}
+
+.reveal--flip.visible {
+  transform: perspective(800px) rotateY(0);
+}
+
+/* Stagger delays - applied by JS per element index */
 .reveal:nth-child(2) {
   transition-delay: 0.1s;
 }
@@ -1304,6 +1366,107 @@ button {
 
 .reveal:nth-child(5) {
   transition-delay: 0.4s;
+}
+
+/* ── Stat Counter Glow ──────────────────────────────────────── */
+.stat-card__number {
+  transition: color 0.3s ease;
+}
+
+.stat-card.counted .stat-card__number {
+  animation: statPulse 0.6s ease-out;
+}
+
+@keyframes statPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+    text-shadow: 0 0 20px rgba(192, 120, 104, 0.6);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ── Section Title Underline Reveal ──────────────────────────── */
+.section__title {
+  position: relative;
+  display: inline-block;
+}
+
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.section__title.visible::after {
+  width: 100%;
+}
+
+/* ── Hero Name Letter Animation ─────────────────────────────── */
+.hero__name .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px) rotateX(90deg);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__name .letter.visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+.hero__name .letter-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+/* ── Floating Animation for Decorative Elements ─────────────── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero__code-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero__code-float--2 {
+  animation-delay: 0.5s;
+}
+
+.hero__code-float--3 {
+  animation-delay: 1s;
+}
+
+.hero__code-float--4 {
+  animation-delay: 1.5s;
+}
+
+/* ── Contact Card Pop-in ────────────────────────────────────── */
+.contact__social-card.reveal {
+  transform: translateY(30px) scale(0.9);
+}
+
+.contact__social-card.reveal.visible {
+  transform: translateY(0) scale(1);
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
