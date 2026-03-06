@@ -138,72 +138,42 @@
         <span class="section__eyebrow">Expertise</span>
         <h2 class="section__title">Skills & <span class="accent">Tools</span></h2>
       </div>
-      <div class="row g-4">
-        <!-- Skill Bars -->
-        <div class="col-lg-6" data-aos="fade-up">
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">Frontend Development</span>
-              <span class="skill-bar__badge">Pro</span>
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="code-card">
+            <div class="code-card__header">
+              <div class="code-card__dots">
+                <span class="code-card__dot code-card__dot--red"></span>
+                <span class="code-card__dot code-card__dot--yellow"></span>
+                <span class="code-card__dot code-card__dot--green"></span>
+              </div>
+              <span class="code-card__filename">skills.js</span>
             </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">Backend & APIs</span>
-              <span class="skill-bar__badge">Pro</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">UI / UX Design</span>
-              <span class="skill-bar__badge">Expert</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">Database Management</span>
-              <span class="skill-bar__badge">Pro</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 70%"></div>
-            </div>
-          </div>
-        </div>
-        <!-- Toolbox Card -->
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="toolbox-card">
-            <h3 class="toolbox-card__title"><i class="bi bi-tools"></i> Toolbox</h3>
-            <div class="toolbox-card__grid">
-              <span class="toolbox-tag">HTML5</span>
-              <span class="toolbox-tag">CSS3</span>
-              <span class="toolbox-tag">JavaScript</span>
-              <span class="toolbox-tag">TypeScript</span>
-              <span class="toolbox-tag">React</span>
-              <span class="toolbox-tag">Vue.js</span>
-              <span class="toolbox-tag">Angular</span>
-              <span class="toolbox-tag">Node.js</span>
-              <span class="toolbox-tag">Python</span>
-              <span class="toolbox-tag">PHP</span>
-              <span class="toolbox-tag">Java</span>
-              <span class="toolbox-tag">Express</span>
-              <span class="toolbox-tag">MongoDB</span>
-              <span class="toolbox-tag">MySQL</span>
-              <span class="toolbox-tag">PostgreSQL</span>
-              <span class="toolbox-tag">Git</span>
-              <span class="toolbox-tag">Docker</span>
-              <span class="toolbox-tag">Linux</span>
-              <span class="toolbox-tag">Figma</span>
-              <span class="toolbox-tag">Adobe XD</span>
-              <span class="toolbox-tag">VS Code</span>
+            <div class="code-card__body">
+              <pre class="code-card__code"><span class="code-line"><span class="ln">01</span>  <span class="ck">const</span> <span class="cv">skills</span> = {</span>
+<span class="code-line"><span class="ln">02</span></span>
+<span class="code-line"><span class="ln">03</span>    <span class="cp">frontend</span>: [</span>
+<span class="code-line"><span class="ln">04</span>      <span class="cs">'HTML5'</span>, <span class="cs">'CSS3'</span>, <span class="cs">'JavaScript'</span>,</span>
+<span class="code-line"><span class="ln">05</span>      <span class="cs">'TypeScript'</span>, <span class="cs">'React'</span>, <span class="cs">'Vue.js'</span>, <span class="cs">'Angular'</span></span>
+<span class="code-line"><span class="ln">06</span>    ],</span>
+<span class="code-line"><span class="ln">07</span></span>
+<span class="code-line"><span class="ln">08</span>    <span class="cp">backend</span>: [</span>
+<span class="code-line"><span class="ln">09</span>      <span class="cs">'Node.js'</span>, <span class="cs">'Express'</span>, <span class="cs">'Python'</span>,</span>
+<span class="code-line"><span class="ln">10</span>      <span class="cs">'PHP'</span>, <span class="cs">'Java'</span></span>
+<span class="code-line"><span class="ln">11</span>    ],</span>
+<span class="code-line"><span class="ln">12</span></span>
+<span class="code-line"><span class="ln">13</span>    <span class="cp">databases</span>: [</span>
+<span class="code-line"><span class="ln">14</span>      <span class="cs">'MongoDB'</span>, <span class="cs">'MySQL'</span>, <span class="cs">'PostgreSQL'</span></span>
+<span class="code-line"><span class="ln">15</span>    ],</span>
+<span class="code-line"><span class="ln">16</span></span>
+<span class="code-line"><span class="ln">17</span>    <span class="cp">tools</span>: [</span>
+<span class="code-line"><span class="ln">18</span>      <span class="cs">'Git'</span>, <span class="cs">'Docker'</span>, <span class="cs">'Linux'</span>,</span>
+<span class="code-line"><span class="ln">19</span>      <span class="cs">'Figma'</span>, <span class="cs">'Adobe XD'</span>, <span class="cs">'VS Code'</span></span>
+<span class="code-line"><span class="ln">20</span>    ],</span>
+<span class="code-line"><span class="ln">21</span></span>
+<span class="code-line"><span class="ln">22</span>    <span class="cp">creative</span>: <span class="cb">true</span>,</span>
+<span class="code-line"><span class="ln">23</span>    <span class="cp">status</span>: <span class="cs">'Always learning'</span></span>
+<span class="code-line"><span class="ln">24</span>  };</span></pre>
             </div>
           </div>
         </div>

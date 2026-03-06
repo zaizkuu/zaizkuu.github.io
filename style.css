@@ -487,105 +487,114 @@ img {
   letter-spacing: 0.02em;
 }
 
-/* ── Skills ──────────────────────────────────────────────────── */
-.skill-bar {
-  margin-bottom: 28px;
-}
-
-.skill-bar__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.skill-bar__name {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.skill-bar__badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: var(--bg);
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-}
-
-.skill-bar__track {
-  width: 100%;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.06);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.skill-bar__fill {
-  height: 100%;
-  background: var(--text);
-  border-radius: 999px;
-  width: 0;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.skill-bar__fill.animated {
-  /* Width set via inline style */
-}
-
-/* ── Toolbox Card ────────────────────────────────────────────── */
-.toolbox-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+/* ── Code Card (Skills) ──────────────────────────────────────── */
+.code-card {
   border-radius: var(--radius);
-  padding: 32px;
-  height: 100%;
-}
-
-.toolbox-card__title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text);
-}
-
-.toolbox-card__title i {
-  font-size: 1.2rem;
-}
-
-.toolbox-card__grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.toolbox-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  background: var(--bg-gray);
-  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   transition: all var(--transition);
-  cursor: default;
-  border: 1px solid transparent;
 }
 
-.toolbox-tag:hover {
-  background: var(--bg-card);
+.code-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
   border-color: var(--border-hover);
-  color: var(--text);
-  transform: translateY(-2px);
 }
+
+.code-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.code-card__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.code-card__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.code-card__dot--red {
+  background: #ff5f57;
+}
+
+.code-card__dot--yellow {
+  background: #febc2e;
+}
+
+.code-card__dot--green {
+  background: #28c840;
+}
+
+.code-card__filename {
+  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+
+.code-card__body {
+  background: #1e1e1e;
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.code-card__code {
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #d4d4d4;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.code-line {
+  display: block;
+}
+
+.code-line:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Line numbers */
+.ln {
+  color: #555;
+  user-select: none;
+  margin-right: 16px;
+  font-size: 0.75rem;
+}
+
+/* Syntax colors (VS Code Dark+) */
+.ck {
+  color: #569cd6;
+}
+
+.cv {
+  color: #9cdcfe;
+}
+
+.cp {
+  color: #9cdcfe;
+}
+
+.cs {
+  color: #ce9178;
+}
+
+.cb {
+  color: #569cd6;
+}
+
 
 /* ── Certifications ──────────────────────────────────────────── */
 .cert-card {
