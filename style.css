@@ -73,10 +73,10 @@ img {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-position: center center;
-  opacity: 0.6;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
 }
 
@@ -256,59 +256,6 @@ img {
   padding-top: 100px;
   background: transparent;
   overflow: hidden;
-}
-
-.hero__geom {
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.8;
-}
-
-.hero__geom--1 {
-  top: 15%;
-  right: 10%;
-  width: 120px;
-  height: 120px;
-  animation: floatGeom 6s ease-in-out infinite;
-}
-
-.hero__geom--2 {
-  bottom: 20%;
-  left: 5%;
-  width: 80px;
-  height: 80px;
-  animation: floatGeom 8s ease-in-out infinite reverse;
-}
-
-.hero__geom--3 {
-  top: 40%;
-  left: 15%;
-  width: 40px;
-  height: 40px;
-  animation: spinGeom 15s linear infinite;
-}
-
-@keyframes floatGeom {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes spinGeom {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .hero__greeting {
