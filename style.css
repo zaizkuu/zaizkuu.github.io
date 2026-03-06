@@ -277,10 +277,10 @@ button {
 
 .hero__role--design {
   color: #f5efe6;
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
+  font-family: var(--font);
+  font-weight: 800;
   font-size: clamp(2.75rem, 6vw, 4.5rem);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.03em;
 }
 
 .hero__role--code {
