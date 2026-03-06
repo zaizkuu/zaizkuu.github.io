@@ -4,127 +4,268 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jon Jon Albao — Developer & Creative</title>
+  <title>Zaizkuu — Developer & Creative</title>
   <meta name="description"
-    content="Portfolio of Jon Jon Albao — a developer and creative showcasing skills, projects, and experience." />
-  <meta property="og:title" content="Jon Jon Albao — Developer & Creative" />
+    content="Portfolio of Zaizkuu — a developer and creative showcasing skills, projects, and experience." />
+  <meta property="og:title" content="Zaizkuu — Developer & Creative" />
   <meta property="og:description" content="Portfolio showcasing skills, projects, and experience." />
   <meta property="og:type" content="website" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
 
-  <!-- ═══════════ HEADER / NAVIGATION ═══════════ -->
-  <header class="site-header" id="header">
-    <div class="header__inner">
-      <a href="#hero" class="header__logo">J<span class="accent">.</span></a>
-      <button class="header__toggle" id="navToggle" aria-label="Toggle menu">
-        <i class="bi bi-list"></i>
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ═══════════ NAVIGATION ═══════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">Z<span class="accent">.</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </button>
-    </div>
-  </header>
-
-  <!-- Sidebar Navigation -->
-  <div class="nav-overlay" id="navOverlay"></div>
-  <nav class="sidebar-nav" id="sidebarNav">
-    <button class="sidebar-nav__close" id="navClose" aria-label="Close menu">
-      <i class="bi bi-x-lg"></i>
-    </button>
-    <ul class="sidebar-nav__links">
-      <li><a href="#hero" class="sidebar-nav__link active">Home</a></li>
-      <li><a href="#about" class="sidebar-nav__link">About</a></li>
-      <li><a href="#skills" class="sidebar-nav__link">Skills</a></li>
-      <li><a href="#certifications" class="sidebar-nav__link">Certifications</a></li>
-      <li><a href="#portfolio" class="sidebar-nav__link">Portfolio</a></li>
-      <li><a href="#contact" class="sidebar-nav__link">Contact</a></li>
-    </ul>
-    <div class="sidebar-nav__social">
-      <a href="https://github.com/zaizkuu" target="_blank" rel="noopener" aria-label="GitHub"><i
-          class="bi bi-github"></i></a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-          class="bi bi-linkedin"></i></a>
-      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i
-          class="bi bi-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i
-          class="bi bi-instagram"></i></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- ═══════════ HERO ═══════════ -->
   <section class="hero" id="hero">
-    <div class="container">
-      <div class="row align-items-center min-vh-100">
-        <div class="col-lg-7">
-          <div class="hero__content" data-aos="fade-up">
-            <p class="hero__greeting">Hello, I'm</p>
-            <h1 class="hero__name">Jon Jon<br><span class="accent">Albao</span></h1>
-            <p class="hero__tagline">Developer & Creative based in Tanauan, Leyte — building thoughtful digital
-              experiences at the intersection of code and design.</p>
-            <div class="hero__actions">
-              <a href="#portfolio" class="btn-custom btn-custom--primary">View My Work</a>
-              <a href="#contact" class="btn-custom btn-custom--ghost">Get in Touch <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+    <div class="hero__split">
+      <!-- Left Column: Designer / Creative -->
+      <div class="hero__col hero__col--left reveal">
+        <h2 class="hero__role hero__role--design">designer</h2>
+        <p class="hero__role-desc">Creative thinker specializing in UI design, visual identity, and user experience.</p>
+        <!-- Decorative brush strokes -->
+        <div class="hero__deco hero__deco--1" aria-hidden="true"></div>
+        <div class="hero__deco hero__deco--2" aria-hidden="true"></div>
+        <div class="hero__deco hero__deco--3" aria-hidden="true"></div>
+      </div>
+
+      <!-- Center: Profile Photo -->
+      <div class="hero__center reveal">
+        <div class="hero__photo-wrap">
+          <img src="profile.jpg" alt="Zaizkuu — Developer & Creative" class="hero__photo" />
+          <!-- Left color overlay -->
+          <div class="hero__photo-overlay hero__photo-overlay--left" aria-hidden="true"></div>
+          <!-- Right code overlay -->
+          <div class="hero__photo-overlay hero__photo-overlay--right" aria-hidden="true"></div>
         </div>
-        <div class="col-lg-5">
-          <div class="hero__image" data-aos="fade-left" data-aos-delay="200">
-            <img src="profile.jpg" alt="Jon Jon Albao" class="hero__photo" />
-            <div class="hero__float-tag">
-              <span class="hero__float-number">2+</span>
-              <span class="hero__float-label">yrs<br>exp</span>
-            </div>
-          </div>
+      </div>
+
+      <!-- Right Column: Coder / Developer -->
+      <div class="hero__col hero__col--right reveal">
+        <h2 class="hero__role hero__role--code">&lt;coder&gt;</h2>
+        <p class="hero__role-desc">Front-end developer who writes clean, elegant, and efficient code.</p>
+        <!-- Floating code snippets -->
+        <div class="hero__code-float hero__code-float--1" aria-hidden="true">
+          <span class="code-tag">&lt;html&gt;</span>
+        </div>
+        <div class="hero__code-float hero__code-float--2" aria-hidden="true">
+          <span class="code-prop">color:</span><span class="code-val">#C07868;</span>
+        </div>
+        <div class="hero__code-float hero__code-float--3" aria-hidden="true">
+          <span class="code-tag">CSS3</span> <span class="code-val">HTML5</span>
+        </div>
+        <div class="hero__code-float hero__code-float--4" aria-hidden="true">
+          <span class="code-prop">class=</span><span class="code-val">"dev"</span>
         </div>
       </div>
     </div>
-    <a href="#about" class="hero__scroll" aria-label="Scroll down">
-      <i class="bi bi-chevron-down"></i>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="hero__scroll-btn" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+        <path d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+      </svg>
     </a>
   </section>
 
+  <!-- ═══════════ TECH MARQUEE ═══════════ -->
+  <section class="marquee" aria-label="Technologies">
+    <div class="marquee__track">
+      <!-- First set -->
+      <div class="marquee__items">
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt="HTML5" /><span>HTML5</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt="CSS3" /><span>CSS3</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript" /><span>JavaScript</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+            alt="TypeScript" /><span>TypeScript</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            alt="React" /><span>React</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+            alt="Vue.js" /><span>Vue.js</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+            alt="Angular" /><span>Angular</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt="Python" /><span>Python</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            alt="Node.js" /><span>Node.js</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+            alt="Express" /><span>Express</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            alt="MongoDB" /><span>MongoDB</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            alt="MySQL" /><span>MySQL</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL" /><span>PostgreSQL</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+            alt="Git" /><span>Git</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            alt="Docker" /><span>Docker</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+            alt="Figma" /><span>Figma</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" /><span>VS
+            Code</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+            alt="Linux" /><span>Linux</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+            alt="PHP" /><span>PHP</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            alt="Java" /><span>Java</span></div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee__items">
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt="HTML5" /><span>HTML5</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt="CSS3" /><span>CSS3</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript" /><span>JavaScript</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+            alt="TypeScript" /><span>TypeScript</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            alt="React" /><span>React</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+            alt="Vue.js" /><span>Vue.js</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+            alt="Angular" /><span>Angular</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt="Python" /><span>Python</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            alt="Node.js" /><span>Node.js</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+            alt="Express" /><span>Express</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            alt="MongoDB" /><span>MongoDB</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            alt="MySQL" /><span>MySQL</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL" /><span>PostgreSQL</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+            alt="Git" /><span>Git</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            alt="Docker" /><span>Docker</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+            alt="Figma" /><span>Figma</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" /><span>VS
+            Code</span></div>
+        <div class="marquee__item"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+            alt="Linux" /><span>Linux</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+            alt="PHP" /><span>PHP</span></div>
+        <div class="marquee__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            alt="Java" /><span>Java</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════ ABOUT ═══════════ -->
-  <section class="section" id="about">
+  <section class="section about" id="about">
     <div class="container">
-      <div class="row align-items-start g-5">
-        <div class="col-lg-6" data-aos="fade-right">
-          <span class="section__eyebrow">Hello There</span>
-          <h2 class="section__title">Hi, I'm Jon.<br>A Developer &<br><span class="accent">Creative</span> Thinker.</h2>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="about__text">
-            <p>I'm an IT student bridging the gap between technical development and visual storytelling. My technical
-              background spans full-stack development, networking, and hardware troubleshooting.</p>
-            <p>Alongside my coding skills in Java, Python, and Laravel, I also work extensively in business design —
-              creating brand identities, ad campaigns, and digital media that resonates.</p>
-          </div>
+      <span class="section__label reveal">01 / About</span>
+      <h2 class="section__title reveal">About <span class="accent">Me</span></h2>
+      <div class="about__content reveal">
+        <div class="about__text">
+          <p>I'm a passionate developer who loves crafting clean, efficient, and visually engaging web experiences. With
+            a keen eye for design and a love for problem-solving, I turn ideas into reality through code.</p>
+          <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
+            leveling up my skills through creative side projects.</p>
           <div class="about__stats">
-            <div class="about__stat">
-              <span class="about__stat-number">7</span>
-              <span class="about__stat-label">Projects Built</span>
+            <div class="stat-card">
+              <span class="stat-card__number">2+</span>
+              <span class="stat-card__label">Years Experience</span>
             </div>
-            <div class="about__stat">
-              <span class="about__stat-number">4+</span>
-              <span class="about__stat-label">Tech Stacks</span>
+            <div class="stat-card">
+              <span class="stat-card__number">10+</span>
+              <span class="stat-card__label">Projects Built</span>
             </div>
-            <div class="about__stat">
-              <span class="about__stat-number">2+</span>
-              <span class="about__stat-label">Years Experience</span>
+            <div class="stat-card">
+              <span class="stat-card__number">5+</span>
+              <span class="stat-card__label">Technologies</span>
             </div>
+          </div>
+        </div>
+
+        <!-- Code Editor Card -->
+        <div class="code-card" data-tilt>
+          <div class="code-card__header">
+            <div class="code-card__dots">
+              <span class="code-card__dot code-card__dot--red"></span>
+              <span class="code-card__dot code-card__dot--yellow"></span>
+              <span class="code-card__dot code-card__dot--green"></span>
+            </div>
+            <span class="code-card__filename">● Portfolio.ts</span>
+          </div>
+          <div class="code-card__body">
+            <pre
+              class="code-card__code"><span class="code-line"><span class="line-num">01</span>  <span class="code-keyword">const</span> <span class="code-var">developer</span> = {</span>
+<span class="code-line"><span class="line-num">02</span>    <span class="code-prop">name</span>: <span class="code-string">'Zaizkuu'</span>,</span>
+<span class="code-line"><span class="line-num">03</span>    <span class="code-prop">focus</span>: <span class="code-string">'Creative Development'</span>,</span>
+<span class="code-line"><span class="line-num">04</span>    <span class="code-prop">skills</span>: [<span class="code-string">'Web'</span>, <span class="code-string">'Design'</span>, <span class="code-string">'Video'</span>],</span>
+<span class="code-line"><span class="line-num">05</span>    <span class="code-prop">passionate</span>: <span class="code-bool">true</span>,</span>
+<span class="code-line"><span class="line-num">06</span>    <span class="code-prop">motto</span>: <span class="code-string">"Build with Purpose"</span></span>
+<span class="code-line"><span class="line-num">07</span>  };</span>
+<span class="code-line"><span class="line-num">08</span></span>
+<span class="code-line"><span class="line-num">09</span>  <span class="code-var">developer</span>.<span class="code-func">showcase</span>();</span></pre>
           </div>
         </div>
       </div>
@@ -132,79 +273,93 @@
   </section>
 
   <!-- ═══════════ SKILLS ═══════════ -->
-  <section class="section section--gray" id="skills">
+  <section class="section skills" id="skills">
     <div class="container">
-      <div class="text-center mb-5" data-aos="fade-up">
-        <span class="section__eyebrow">Expertise</span>
-        <h2 class="section__title">Skills & <span class="accent">Tools</span></h2>
-      </div>
-      <div class="row g-4">
-        <!-- Skill Bars -->
-        <div class="col-lg-6" data-aos="fade-up">
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">Frontend Development</span>
-              <span class="skill-bar__badge">Pro</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 85%"></div>
-            </div>
+      <span class="section__label reveal">02 / Skills</span>
+      <h2 class="section__title reveal">My <span class="accent">Skills</span></h2>
+      <p class="section__subtitle reveal">Technologies and tools I work with</p>
+      <div class="bento">
+        <!-- Large card -->
+        <div class="bento__card bento__card--lg reveal" data-tilt>
+          <div class="bento__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+            </svg>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">Backend & APIs</span>
-              <span class="skill-bar__badge">Pro</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">UI / UX Design</span>
-              <span class="skill-bar__badge">Expert</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span class="skill-bar__name">Database Management</span>
-              <span class="skill-bar__badge">Pro</span>
-            </div>
-            <div class="skill-bar__track">
-              <div class="skill-bar__fill" style="width: 70%"></div>
-            </div>
+          <h3 class="bento__title">Frontend Development</h3>
+          <p class="bento__desc">Building responsive, performant, and accessible user interfaces with modern frameworks
+            and tools.</p>
+          <div class="bento__tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
           </div>
         </div>
-        <!-- Toolbox Card -->
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="toolbox-card">
-            <h3 class="toolbox-card__title"><i class="bi bi-tools"></i> Toolbox</h3>
-            <div class="toolbox-card__grid">
-              <span class="toolbox-tag">HTML5</span>
-              <span class="toolbox-tag">CSS3</span>
-              <span class="toolbox-tag">JavaScript</span>
-              <span class="toolbox-tag">TypeScript</span>
-              <span class="toolbox-tag">React</span>
-              <span class="toolbox-tag">Vue.js</span>
-              <span class="toolbox-tag">Angular</span>
-              <span class="toolbox-tag">Node.js</span>
-              <span class="toolbox-tag">Python</span>
-              <span class="toolbox-tag">PHP</span>
-              <span class="toolbox-tag">Java</span>
-              <span class="toolbox-tag">Express</span>
-              <span class="toolbox-tag">MongoDB</span>
-              <span class="toolbox-tag">MySQL</span>
-              <span class="toolbox-tag">PostgreSQL</span>
-              <span class="toolbox-tag">Git</span>
-              <span class="toolbox-tag">Docker</span>
-              <span class="toolbox-tag">Linux</span>
-              <span class="toolbox-tag">Figma</span>
-              <span class="toolbox-tag">Adobe XD</span>
-              <span class="toolbox-tag">VS Code</span>
-            </div>
+
+        <!-- Medium card -->
+        <div class="bento__card bento__card--md reveal" data-tilt>
+          <div class="bento__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+            </svg>
+          </div>
+          <h3 class="bento__title">Backend & APIs</h3>
+          <p class="bento__desc">Designing robust server-side applications and RESTful APIs.</p>
+          <div class="bento__tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">Express</span>
+          </div>
+        </div>
+
+        <!-- Small card -->
+        <div class="bento__card bento__card--sm reveal" data-tilt>
+          <div class="bento__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+            </svg>
+          </div>
+          <h3 class="bento__title">Databases</h3>
+          <div class="bento__tags">
+            <span class="tag">MongoDB</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <!-- Small card -->
+        <div class="bento__card bento__card--sm reveal" data-tilt>
+          <div class="bento__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
+            </svg>
+          </div>
+          <h3 class="bento__title">UI / UX Design</h3>
+          <div class="bento__tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Adobe XD</span>
+          </div>
+        </div>
+
+        <!-- Medium card -->
+        <div class="bento__card bento__card--md reveal" data-tilt>
+          <div class="bento__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.193-.14 1.743" />
+            </svg>
+          </div>
+          <h3 class="bento__title">Dev Tools & Workflow</h3>
+          <p class="bento__desc">Streamlined development with modern tooling.</p>
+          <div class="bento__tags">
+            <span class="tag">Git</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Linux</span>
           </div>
         </div>
       </div>
@@ -212,204 +367,192 @@
   </section>
 
   <!-- ═══════════ CERTIFICATIONS ═══════════ -->
-  <section class="section" id="certifications">
+  <section class="section certifications" id="certifications">
     <div class="container">
-      <div class="text-center mb-5" data-aos="fade-up">
-        <span class="section__eyebrow">Credentials</span>
-        <h2 class="section__title">My <span class="accent">Certifications</span></h2>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6" data-aos="fade-up">
-          <div class="cert-card">
-            <div class="cert-card__image">
-              <img src="certificate-css-ncii.jpg" alt="National Certificate II — Computer Systems Servicing NC II" />
-              <div class="cert-card__badge">
-                <i class="bi bi-patch-check-fill"></i>
-              </div>
-            </div>
-            <div class="cert-card__info">
-              <h3 class="cert-card__title">National Certificate II</h3>
-              <p class="cert-card__subject">Computer Systems Servicing NC II</p>
-              <div class="cert-card__meta">
-                <span class="cert-card__issuer">TESDA — Technical Education and Skills Development Authority</span>
-                <span class="cert-card__date">Issued: July 2023</span>
-              </div>
+      <span class="section__label reveal">03 / Certifications</span>
+      <h2 class="section__title reveal">My <span class="accent">Certifications</span></h2>
+      <p class="section__subtitle reveal">Professional credentials and achievements</p>
+      <div class="certs__grid">
+        <article class="cert-card reveal">
+          <div class="cert-card__image">
+            <img src="certificate-css-ncii.jpg" alt="National Certificate II — Computer Systems Servicing NC II" />
+            <div class="cert-card__badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
+                <path
+                  d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+              </svg>
             </div>
           </div>
-        </div>
+          <div class="cert-card__info">
+            <h3 class="cert-card__title">National Certificate II</h3>
+            <p class="cert-card__subject">Computer Systems Servicing NC II</p>
+            <div class="cert-card__meta">
+              <span class="cert-card__issuer">TESDA — Technical Education and Skills Development Authority</span>
+              <span class="cert-card__date">Issued: July 2023</span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ PORTFOLIO ═══════════ -->
-  <section class="section section--gray" id="portfolio">
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section class="section projects" id="projects">
     <div class="container">
-      <div class="text-center mb-5" data-aos="fade-up">
-        <span class="section__eyebrow">Work</span>
-        <h2 class="section__title">Featured <span class="accent">Projects</span></h2>
-      </div>
+      <span class="section__label reveal">04 / Work</span>
+      <h2 class="section__title reveal">Featured <span class="accent">Projects</span></h2>
+      <p class="section__subtitle reveal">SOME OF MY LATEST WORK</p>
 
-      <!-- Filter Buttons -->
-      <div class="portfolio-filters" data-aos="fade-up">
-        <button class="portfolio-filter active" data-filter="all">All</button>
-        <button class="portfolio-filter" data-filter="video">Video</button>
-        <button class="portfolio-filter" data-filter="design">Design</button>
-        <button class="portfolio-filter" data-filter="branding">Branding</button>
-      </div>
-
-      <!-- Portfolio Grid -->
-      <div class="portfolio-grid">
-        <!-- Video Project -->
-        <div class="portfolio-item portfolio-item--wide" data-category="video" data-aos="fade-up">
-          <div class="portfolio-item__media">
-            <video class="portfolio-item__video" controls muted loop playsinline preload="metadata">
-              <source src="Tapang.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="portfolio-item__info">
-            <span class="portfolio-item__cat">Motion Graphics</span>
-            <h3 class="portfolio-item__title">Thommy Food Hub Digital Ad Campaign</h3>
-            <p class="portfolio-item__desc">Dynamic motion graphics bringing the brand's playful mascot and vibrant
-              menu to life with composited product shots and 3D-style floating ingredients.</p>
-            <div class="portfolio-item__tags">
-              <span>After Effects</span>
-              <span>Motion Graphics</span>
-              <span>Video Editing</span>
+      <div class="projects__grid">
+        <!-- Video Project: Thommy Food Hub -->
+        <article class="project-card project-card--wide reveal" data-tilt>
+          <div class="project-card__preview">
+            <div class="project-card__video-wrap">
+              <video class="project-card__video" controls muted loop playsinline preload="metadata">
+                <source src="Tapang.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
-        </div>
-
-        <!-- Magtanim -->
-        <div class="portfolio-item" data-category="design" data-aos="fade-up">
-          <div class="portfolio-item__media">
-            <img src="abstract.png" alt="Magtanim - Geometric Digital Art" class="portfolio-item__image" />
-            <div class="portfolio-item__overlay">
-              <i class="bi bi-arrows-fullscreen"></i>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Thommy Food Hub Digital Ad Campaign</h3>
+            <p class="project-card__desc">I utilized dynamic motion graphics to bring the brand's playful mascot and
+              vibrant menu to life. By compositing product shots with dynamic liquid splashes and 3D-style floating
+              ingredients, the video creates an immersive visual experience.</p>
+            <div class="project-card__tech">
+              <span class="tag tag--sm">Motion Graphics</span>
+              <span class="tag tag--sm">After Effects</span>
+              <span class="tag tag--sm">Video Editing</span>
             </div>
           </div>
-          <div class="portfolio-item__info">
-            <span class="portfolio-item__cat">Digital Art</span>
-            <h3 class="portfolio-item__title">"Magtanim" — Geometric Digital Art</h3>
+        </article>
+
+        <!-- Image Project: Magtanim -->
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__preview">
+            <img src="abstract.png" alt="Magtanim - Geometric Digital Art" class="project-card__image" />
           </div>
-        </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">"Magtanim" - Geometric Digital Art</h3>
+            <p class="project-card__desc">This piece reimagines a familiar scene of local farmers at work through a
+              contemporary geometric lens. By breaking down the figures and the landscape into sharp, colorful
+              triangles, the artwork captures the dynamic energy and collective effort of planting.</p>
+            <div class="project-card__tech">
+              <span class="tag tag--sm">Digital Art</span>
+              <span class="tag tag--sm">Geometric Design</span>
+              <span class="tag tag--sm">Illustration</span>
+            </div>
+          </div>
+        </article>
 
         <!-- Ad Campaign Poster -->
-        <div class="portfolio-item" data-category="branding" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-item__media">
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__preview">
             <img src="Ad Campaign (Poster).jpg" alt="Thommy Food Hub - Bring Your Own Cup Campaign"
-              class="portfolio-item__image" />
-            <div class="portfolio-item__overlay">
-              <i class="bi bi-arrows-fullscreen"></i>
+              class="project-card__image" />
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Thommy Food Hub — "Bring Your Own Cup" Campaign</h3>
+            <p class="project-card__desc">This energetic and eye-catching promotional poster was designed for Thommy
+              Food
+              Hub to encourage sustainability while driving sales. The campaign incentivizes eco-friendly behavior by
+              offering a 10% discount to customers who bring their own cups.</p>
+            <div class="project-card__tech">
+              <span class="tag tag--sm">Poster Design</span>
+              <span class="tag tag--sm">Graphic Design</span>
+              <span class="tag tag--sm">Branding</span>
             </div>
           </div>
-          <div class="portfolio-item__info">
-            <span class="portfolio-item__cat">Branding</span>
-            <h3 class="portfolio-item__title">Bring Your Own Cup Ad Campaign</h3>
-          </div>
-        </div>
+        </article>
 
         <!-- Product Poster -->
-        <div class="portfolio-item" data-category="branding" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-item__media">
-            <img src="Poster.jpg" alt="Thommy Food Hub - Product Lineup Poster" class="portfolio-item__image" />
-            <div class="portfolio-item__overlay">
-              <i class="bi bi-arrows-fullscreen"></i>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__preview">
+            <img src="Poster.jpg" alt="Thommy Food Hub - Product Lineup Poster" class="project-card__image" />
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Thommy Food Hub — Product Lineup Poster</h3>
+            <p class="project-card__desc">Complementing the high-energy "Bring Your Own Cup" campaign, this poster
+              adopts a
+              clean, minimalist aesthetic to highlight the brand's core product lineup and competitive pricing. The
+              design focuses on clarity and appetite appeal, positioning the beverages as an accessible, everyday luxury
+              at the ₱39 price point.</p>
+            <div class="project-card__tech">
+              <span class="tag tag--sm">Poster Design</span>
+              <span class="tag tag--sm">Minimalist Design</span>
+              <span class="tag tag--sm">Branding</span>
             </div>
           </div>
-          <div class="portfolio-item__info">
-            <span class="portfolio-item__cat">Branding</span>
-            <h3 class="portfolio-item__title">Promotional Poster Product Line Up</h3>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ═══════════ CONTACT ═══════════ -->
-  <section class="section" id="contact">
+  <section class="section contact" id="contact">
     <div class="container">
-      <div class="text-center mb-5" data-aos="fade-up">
-        <span class="section__eyebrow">Contact</span>
-        <h2 class="section__title">Get in <span class="accent">Touch</span></h2>
-        <p class="section__subtitle">Let's connect and build something great together.</p>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-8" data-aos="fade-up">
-          <div class="contact-grid">
-            <a href="https://github.com/zaizkuu" target="_blank" rel="noopener" class="contact-card">
-              <i class="bi bi-github"></i>
-              <span class="contact-card__name">GitHub</span>
-              <span class="contact-card__handle">@zaizkuu</span>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-card">
-              <i class="bi bi-linkedin"></i>
-              <span class="contact-card__name">LinkedIn</span>
-              <span class="contact-card__handle">Connect with me</span>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" class="contact-card">
-              <i class="bi bi-twitter-x"></i>
-              <span class="contact-card__name">X / Twitter</span>
-              <span class="contact-card__handle">Follow me</span>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="contact-card">
-              <i class="bi bi-facebook"></i>
-              <span class="contact-card__name">Facebook</span>
-              <span class="contact-card__handle">Add me</span>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="contact-card">
-              <i class="bi bi-instagram"></i>
-              <span class="contact-card__name">Instagram</span>
-              <span class="contact-card__handle">Follow me</span>
-            </a>
-            <a href="mailto:hello@zaizkuu.dev" class="contact-card">
-              <i class="bi bi-envelope"></i>
-              <span class="contact-card__name">Email</span>
-              <span class="contact-card__handle">hello@zaizkuu.dev</span>
-            </a>
+      <span class="section__label reveal">05 / Contact</span>
+      <h2 class="section__title reveal">Get in <span class="accent">Touch</span></h2>
+      <p class="section__subtitle reveal">Let's connect and build something great together</p>
+      <div class="contact__socials-grid reveal">
+        <a href="https://github.com/zaizkuu" target="_blank" rel="noopener" class="contact__social-card">
+          <div class="contact__social-icon">
+            <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" />
           </div>
-        </div>
+          <span class="contact__social-name">GitHub</span>
+          <span class="contact__social-handle">@zaizkuu</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact__social-card">
+          <div class="contact__social-icon">
+            <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" />
+          </div>
+          <span class="contact__social-name">LinkedIn</span>
+          <span class="contact__social-handle">Connect with me</span>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="contact__social-card">
+          <div class="contact__social-icon">
+            <img src="https://cdn.simpleicons.org/x/white" alt="X / Twitter" />
+          </div>
+          <span class="contact__social-name">X / Twitter</span>
+          <span class="contact__social-handle">Follow me</span>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="contact__social-card">
+          <div class="contact__social-icon">
+            <img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" />
+          </div>
+          <span class="contact__social-name">Facebook</span>
+          <span class="contact__social-handle">Add me</span>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="contact__social-card">
+          <div class="contact__social-icon">
+            <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" />
+          </div>
+          <span class="contact__social-name">Instagram</span>
+          <span class="contact__social-handle">Follow me</span>
+        </a>
+        <a href="mailto:hello@zaizkuu.dev" class="contact__social-card">
+          <div class="contact__social-icon">
+            <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Email" />
+          </div>
+          <span class="contact__social-name">Email</span>
+          <span class="contact__social-handle">hello@zaizkuu.dev</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <p class="footer__copy">&copy; 2026 <span class="accent">Jon Jon Albao</span>. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://github.com/zaizkuu" target="_blank" rel="noopener" aria-label="GitHub"><i
-              class="bi bi-github"></i></a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-              class="bi bi-linkedin"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i
-              class="bi bi-instagram"></i></a>
-        </div>
-      </div>
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2026 <span class="accent">Zaizkuu</span>. All rights reserved.</p>
+      <a href="#hero" class="footer__top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+          <path d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+      </a>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="bi bi-chevron-up"></i>
-  </a>
-
-  <!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">
-      <i class="bi bi-x-lg"></i>
-    </button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
-  </div>
-
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 
